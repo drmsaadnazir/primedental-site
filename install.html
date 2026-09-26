@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installing Prime Dental — step by step</title>
+<meta name="description" content="How to install Prime Dental on Windows, including the two security messages Windows shows for new software and exactly which buttons to press.">
+<link rel="canonical" href="https://primedentalpk.com/install.html">
+<meta property="og:site_name" content="Prime Dental">
+<meta property="og:title" content="Installing Prime Dental — step by step">
+<meta property="og:description" content="Windows shows two warnings for any new installer. Here is exactly what to click.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://primedentalpk.com/install.html">
+<meta property="og:image" content="https://primedentalpk.com/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_PK">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+
+<style>
+  :root{
+    --navy:#0F2744; --ink:#0F2744; --accent:#2E7CF6; --accent2:#00C9A7;
+    --light:#E8F1FF; --gray:#64748B; --green:#0A6B3C; --amber:#92600A;
+    --bg:#FFFFFF; --bg2:#F4F6FA; --line:#E3E8F0; --wa:#25D366;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px 64px}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:26px}
+  .brand{font-weight:800; font-size:15px; letter-spacing:.2px; color:var(--navy); text-decoration:none}
+  h1{font-size:30px; line-height:1.25; margin:18px 0 10px; letter-spacing:-.01em}
+  h2{font-size:19px; margin:34px 0 10px}
+  p{margin:0 0 14px}
+  .lede{font-size:17px; color:var(--gray)}
+
+  .note{
+    background:var(--bg2); border:1px solid var(--line); border-left:4px solid var(--accent);
+    border-radius:10px; padding:14px 16px; margin:22px 0; font-size:15px;
+  }
+  .note b{color:var(--navy)}
+
+  ol.steps{list-style:none; counter-reset:s; padding:0; margin:26px 0 0}
+  ol.steps > li{
+    counter-increment:s; position:relative; padding:0 0 24px 52px; margin:0;
+    border-left:2px solid var(--line);
+  }
+  ol.steps > li:last-child{border-left-color:transparent; padding-bottom:4px}
+  ol.steps > li::before{
+    content:counter(s); position:absolute; left:-17px; top:-2px;
+    width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff;
+    font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center;
+  }
+  ol.steps h3{margin:0 0 6px; font-size:17px; line-height:1.35}
+  ol.steps p{margin:0 0 8px; color:var(--gray)}
+
+  .screen{
+    border:1px solid var(--line); border-radius:10px; background:#fff;
+    padding:14px 16px; margin:10px 0 0; font-size:14.5px; box-shadow:0 1px 3px rgba(15,39,68,.06);
+  }
+  .screen .t{font-weight:700; color:var(--navy); margin-bottom:4px}
+  .screen .m{color:var(--gray); font-size:13.5px}
+  .btns{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+  .btn{border-radius:7px; padding:7px 14px; font-size:14px; font-weight:600; border:1px solid var(--line); background:#fff; color:var(--gray)}
+  .btn.primary{background:var(--navy); border-color:var(--navy); color:#fff}
+  .btn.want{background:#fff; border:2px solid var(--green); color:var(--green)}
+  .want-tag{color:var(--green); font-weight:700; font-size:13.5px; margin-top:10px}
+
+  .why{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:34px 0 0}
+  .why h2{margin-top:0}
+  table{border-collapse:collapse; width:100%; font-size:15px; margin:6px 0 0}
+  td{padding:8px 0; border-bottom:1px solid var(--line); vertical-align:top}
+  td:first-child{color:var(--gray); width:42%; padding-right:14px}
+  footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:14px; color:var(--gray)}
+
+  @media print{
+    body{font-size:12.5pt}
+    .wrap{max-width:none; padding:0}
+    .note,.screen,.why{break-inside:avoid}
+    a{color:var(--ink); text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="brand" href="/">🦷 Prime Dental</a>
+</header>
+
+<h1>Installing Prime Dental</h1>
+<p class="lede">It takes about a minute. Windows will show you two security messages along
+the way — that is normal for any newly released software, and this page shows you exactly
+which button to press each time.</p>
+
+<div class="note">
+  <b>Why the warnings appear.</b> Windows keeps a running count of how many people have
+  downloaded a given program. Prime Dental is new and installed by a small number of
+  clinics, so that count is low and Windows says it "couldn't verify" the file. It is a
+  statement about how <i>common</i> the download is — not a sign that anything is wrong
+  with it.
+</div>
+
+<ol class="steps">
+
+  <li>
+    <h3>Download the installer</h3>
+    <p>Open the link Dr. Saad sent you. The file is named something like
+      <b>Prime Dental_1.6.55_CLIENT_x64_en-US.msi</b> and is about 5 MB.</p>
+  </li>
+
+  <li>
+    <h3>Edge asks you to confirm the download</h3>
+    <p>A panel appears saying the file "isn't commonly downloaded". <b>Both of the obvious
+      buttons here mean "do not install"</b> — the one you want is hidden.</p>
+    <div class="screen">
+      <div class="t">Make sure you trust Prime Dental_1.6.55_CLIENT_x64_en-US.msi before you open it</div>
+      <div class="m">Microsoft Defender SmartScreen couldn't verify if this file is safe because it isn't commonly downloaded.<br>Publisher: Unknown</div>
+      <div class="btns">
+        <span class="btn">Cancel</span>
+        <span class="btn primary">Delete&nbsp; ⌄</span>
+      </div>
+      <div class="want-tag">↑ Click the small <b>⌄ arrow next to Delete</b>, then choose <b>Keep</b>.</div>
+    </div>
+    <p style="margin-top:12px">If it asks a second time, choose <b>Show more</b> → <b>Keep anyway</b>.</p>
+  </li>
+
+  <li>
+    <h3>Open the file</h3>
+    <p>Double-click the downloaded <b>.msi</b> file, from the Downloads panel or your
+      Downloads folder.</p>
+  </li>
+
+  <li>
+    <h3>Windows shows a blue box</h3>
+    <p>"Windows protected your PC". The <b>Run anyway</b> button only appears after you
+      click the small link on the left.</p>
+    <div class="screen" style="background:#0F4C9E; border-color:#0F4C9E">
+      <div class="t" style="color:#fff">Windows protected your PC</div>
+      <div class="m" style="color:#D6E4FA">Microsoft Defender SmartScreen prevented an unrecognised app from starting.</div>
+      <div class="btns">
+        <span class="btn want">More info</span>
+        <span class="btn">Don't run</span>
+      </div>
+      <div class="want-tag" style="color:#9BE8C4">↑ Click <b>More info</b> first — then a <b>Run anyway</b> button appears.</div>
+    </div>
+  </li>
+
+  <li>
+    <h3>Finish the installation</h3>
+    <p>Accept the default options and click through. Prime Dental then appears in your
+      Start menu. Your data stays on this computer — nothing is uploaded anywhere.</p>
+  </li>
+
+</ol>
+
+<div class="why">
+  <h2>If something does not look right</h2>
+  <table>
+    <tr><td>You only see "Cancel" and "Delete"</td><td>Click the <b>⌄</b> arrow on the Delete button. "Keep" is inside that menu.</td></tr>
+    <tr><td>The blue box has no "Run anyway"</td><td>Click <b>More info</b> first. The button appears underneath.</td></tr>
+    <tr><td>"This app can't run on your PC"</td><td>You need 64-bit Windows 10 or 11. Most computers from the last several years qualify.</td></tr>
+    <tr><td>Your antivirus removed the file</td><td>Restore it from quarantine, or ask Dr. Saad to bring it on a USB stick instead.</td></tr>
+    <tr><td>You would rather avoid all of this</td><td>Ask Dr. Saad to install it in person from a USB stick — then Windows shows no warnings at all.</td></tr>
+  </table>
+</div>
+
+<h2>What you should <i>not</i> do</h2>
+<p>Do not click <b>"Report this app as safe"</b>. It sends a review request to Microsoft
+and takes no effect on your installation. Just follow the steps above.</p>
+
+<footer>
+  <b>Prime Dental</b> — offline practice software for Pakistani clinics.<br>
+  Stuck at any step? Send Dr. Saad a screenshot of what you see and he will point at the
+  right button. &nbsp;·&nbsp; <a href="/">primedentalpk.com</a>
+</footer>
+
+</div>
+</body>
+</html>

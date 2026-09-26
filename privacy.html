@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Prime Dental</title>
+<meta name="description" content="How Prime Dental handles clinic and patient data, including the optional Google Calendar connection.">
+<link rel="canonical" href="https://primedentalpk.com/privacy.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+<style>
+  :root{
+    --navy:#0F2744; --ink:#0F2744; --accent:#2E7CF6;
+    --gray:#64748B; --bg:#FFFFFF; --bg2:#F4F6FA; --line:#E3E8F0;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px 64px}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:26px}
+  .brand{font-weight:800; font-size:15px; letter-spacing:.2px; color:var(--navy); text-decoration:none}
+  h1{font-size:30px; line-height:1.25; margin:18px 0 6px; letter-spacing:-.01em}
+  h2{font-size:19px; margin:34px 0 10px}
+  p, ul{margin:0 0 14px}
+  li{margin:0 0 6px}
+  .meta{color:var(--gray); font-size:14px; margin-bottom:22px}
+  .note{
+    background:var(--bg2); border:1px solid var(--line); border-left:4px solid var(--accent);
+    border-radius:10px; padding:14px 16px; margin:22px 0; font-size:15px;
+  }
+  table{border-collapse:collapse; width:100%; font-size:15px; margin:6px 0 14px}
+  td{padding:8px 0; border-bottom:1px solid var(--line); vertical-align:top}
+  td:first-child{color:var(--gray); width:38%; padding-right:14px}
+  footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:14px; color:var(--gray)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="brand" href="/">🦷 Prime Dental</a>
+</header>
+
+<h1>Privacy Policy</h1>
+<div class="meta">Last updated: 26 September 2026</div>
+
+<p>Prime Dental is practice-management software for dental clinics, made by Dr. Saad
+Nazir ("we"). This page explains what happens to the information a clinic enters into the app,
+and what the optional Google Calendar connection does.</p>
+
+<div class="note">
+  <b>The short version:</b> Prime Dental runs on the clinic's own computer. Patient records are
+  stored on that computer and are never sent to us. The only time appointment details leave the
+  computer is if the clinic chooses to connect its own Google Calendar.
+</div>
+
+<h2>1. Where clinic data is stored</h2>
+<p>Everything a clinic enters — patients, visits, treatment notes, prescriptions, payments,
+appointments, stock and registers — is saved on the clinic's own Windows computer. We do not
+run a server that holds clinic data, and we cannot see, access or recover it.</p>
+<p>Backups are written to a folder the clinic chooses. If the clinic picks a folder that is
+synced by a service such as OneDrive or Google Drive, that service's own terms apply to the
+backup files.</p>
+
+<h2>2. What the app sends over the internet</h2>
+<p>Prime Dental works fully offline. When the computer is online, it may make these connections:</p>
+<table>
+  <tr><td>Update check</td><td>Asks our release page on GitHub whether a newer version exists. No clinic or patient data is sent.</td></tr>
+  <tr><td>Fonts</td><td>The app may load display fonts from Google Fonts. No clinic or patient data is sent.</td></tr>
+  <tr><td>WhatsApp</td><td>Buttons such as "Remind" open WhatsApp with a message already typed. Nothing is sent until the clinic presses Send in WhatsApp.</td></tr>
+  <tr><td>Google Calendar</td><td>Only if the clinic turns it on — see section 3.</td></tr>
+</table>
+<p>Prime Dental has no analytics, advertising or usage tracking.</p>
+<p>Licence activation is done by exchanging a short code with us (for example on WhatsApp). That
+code identifies the computer; it contains no patient data.</p>
+
+<h2>3. Google Calendar (optional)</h2>
+<p>A clinic can connect its own Google account in <b>Settings → Google Calendar</b> so that
+appointments appear on the dentist's phone. It is off unless the clinic connects it, and it can
+be disconnected at any time from the same place.</p>
+
+<p><b>What we ask Google for.</b> Prime Dental requests one permission:
+<code>https://www.googleapis.com/auth/calendar.events</code> — to create, change and delete
+events in the connected account's calendar.</p>
+
+<p><b>What we do with it.</b> When an appointment is added or changed in Prime Dental, the app
+creates or updates a matching event in the account's primary calendar. When an appointment is
+cancelled, marked no-show or deleted, the app deletes that event. Each event contains:</p>
+<ul>
+  <li>patient name and appointment type (the event title)</li>
+  <li>date, time and the clinic name (the location)</li>
+  <li>the patient's MR number, phone number, appointment status and any appointment notes (the description)</li>
+  <li>a hidden reference number so the app can find the same event again</li>
+</ul>
+<p>The app also reads the calendar's name once, to show the clinic which account is connected.</p>
+
+<p><b>What we do not do.</b> Prime Dental does not read, list, download, change or delete any
+other events in the calendar — only the ones it created. It does not access Gmail, Contacts,
+Drive or any other Google service.</p>
+
+<p><b>Where the data goes.</b> Data travels directly between the clinic's computer and Google.
+It does not pass through any server of ours, and we never receive or store it. The sign-in token
+is kept only on that computer and is not included in backups or exports. Disconnecting in
+Settings revokes the token and deletes it from the computer. You can also remove access at any
+time from your Google Account at
+<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+Events already created stay in your calendar until you delete them.</p>
+
+<p><b>Limited Use.</b> Prime Dental's use and transfer of information received from Google APIs
+adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements. Google user data is used only to show the clinic's own
+appointments in its own calendar. It is not sold, not used for advertising, not transferred to
+anyone else, and not read by any person except the clinic itself.</p>
+
+<p>Appointment details placed in Google Calendar are held by Google under Google's own
+privacy policy. Clinics should only connect a Google account that belongs to the clinic.</p>
+
+<h2>4. This website</h2>
+<p>This website is hosted on GitHub Pages, which may keep standard server logs such as IP
+addresses. The demo video is embedded from YouTube in privacy-enhanced mode. The site uses no
+cookies or analytics of its own.</p>
+
+<h2>5. Responsibility for patient data</h2>
+<p>The clinic is responsible for the patient data it records in Prime Dental and for deciding
+whether to connect Google Calendar. Because the data never reaches us, requests from patients to
+see, correct or delete their records should go to the clinic.</p>
+
+<h2>6. Changes</h2>
+<p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+<h2>7. Contact</h2>
+<p>Questions about this policy: Dr. Saad Nazir —
+<a href="https://wa.me/923144685900">WhatsApp +92 314 4685900</a>.</p>
+
+<footer>
+  <b>Prime Dental</b> — offline practice software for Pakistani clinics.
+  &nbsp;·&nbsp; <a href="/">primedentalpk.com</a>
+</footer>
+
+</div>
+</body>
+</html>
