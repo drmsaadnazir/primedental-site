@@ -38,7 +38,7 @@
     font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  img{max-width:100%; display:block}
+  img{max-width:100%; height:auto; display:block}
   a{color:var(--accent); text-decoration:none}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
 
@@ -171,13 +171,14 @@
   /* App screens are wide and top-heavy: show the top of the screen at a
      consistent height so the page keeps a rhythm instead of running to 20,000px. */
   .shot img{max-height:430px; object-fit:cover; object-position:top center}
-  .shot--doc img{max-height:none; object-fit:fill}
+  .shot--doc img{max-height:none; object-fit:contain}
   .cap{font-size:13px; color:var(--gray); margin-top:11px; text-align:center; font-style:italic}
   @media(max-width:900px){
     .step{grid-template-columns:1fr; gap:26px; margin-bottom:58px}
     /* single column on phones: always read the text first, then see the screen */
     .step:nth-child(odd) .step-txt{order:0}
     .shot img{max-height:330px}
+    .shot--doc img{max-height:none}
   }
 
   /* ---------- docs pair ---------- */
