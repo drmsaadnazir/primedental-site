@@ -239,6 +239,8 @@
   .faq summary::after{content:"+"; color:var(--accent); font-size:21px; line-height:1; font-weight:400}
   .faq details[open] summary::after{content:"–"}
   .faq p{color:var(--gray); margin:12px 0 0; font-size:15.5px; line-height:1.7; max-width:72ch}
+  .faq ul{color:var(--gray); margin:10px 0 0; padding-left:20px; font-size:15.5px; line-height:1.7; max-width:72ch}
+  .faq li{margin:4px 0}
 
   /* ---------- footer ---------- */
   footer{background:var(--navy); color:#8FA8CC; padding:46px 0; font-size:14px}
@@ -311,7 +313,7 @@
 <!-- ═══════════════ TRUST STRIP ═══════════════ -->
 <div class="strip">
   <div class="wrap strip-in">
-    <div class="it"><span class="ic">🔌</span><span><b>Works offline</b><span>No internet needed, ever. Load-shedding and dead connections don't stop the clinic.</span></span></div>
+    <div class="it"><span class="ic">🔌</span><span><b>Works offline</b><span>The clinic's daily work needs no internet. Load-shedding and dead connections don't stop the clinic.</span></span></div>
     <div class="it"><span class="ic">🔒</span><span><b>Your data stays yours</b><span>Everything sits on your PC. Nothing goes online unless you switch on the optional calendar sync.</span></span></div>
     <div class="it"><span class="ic">📋</span><span><b>PHC-minded</b><span>MR numbers, per-visit timestamps, registers and a tamper-evident audit log.</span></span></div>
     <div class="it"><span class="ic">📤</span><span><b>No lock-in</b><span>Export everything to CSV or PDF whenever you want. It's your record.</span></span></div>
@@ -548,7 +550,7 @@
         <div class="ic">🔌</div>
         <h3>It works when nothing else does</h3>
         <p>Load-shedding, a dead router, a bad day at the exchange — none of it reaches your patient
-          records. The software doesn't know or care whether you're online.</p>
+          records. Notes, billing, printing and registers never wait on a connection.</p>
       </div>
       <div class="card">
         <div class="ic">🔒</div>
@@ -594,9 +596,15 @@
     <div class="faq">
       <details open>
         <summary>Do I need internet?</summary>
-        <p>No. Prime Dental installs on your Windows PC and runs entirely on that machine. It uses the
-          internet only to check for a software update and, if you choose to switch it on, to copy
-          appointments to your Google Calendar. Without internet, everything else keeps working.</p>
+        <p>Not for the clinic's work. Prime Dental installs on your Windows PC and runs on that
+          machine: patients, notes, charting, billing, stock, registers, printing and backups all work
+          with no connection at all. Three optional extras need internet while you use them:</p>
+        <ul>
+          <li><b>Software updates</b>: checked when the app starts. Offline, you simply stay on your current version.</li>
+          <li><b>Google Calendar sync</b>: only if you switch it on. Appointments booked while offline are sent when the connection returns.</li>
+          <li><b>Voice dictation (mic)</b>: speech is turned into text by an online service. Typing works offline as always.</li>
+        </ul>
+        <p>WhatsApp buttons open WhatsApp, which of course needs its own connection to send.</p>
       </details>
       <details>
         <summary>Where is my patient data stored?</summary>
