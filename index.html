@@ -312,7 +312,7 @@
 <div class="strip">
   <div class="wrap strip-in">
     <div class="it"><span class="ic">🔌</span><span><b>Works offline</b><span>No internet needed, ever. Load-shedding and dead connections don't stop the clinic.</span></span></div>
-    <div class="it"><span class="ic">🔒</span><span><b>Your data stays yours</b><span>Everything sits on your PC. Nothing is uploaded to anyone's server.</span></span></div>
+    <div class="it"><span class="ic">🔒</span><span><b>Your data stays yours</b><span>Everything sits on your PC. Nothing goes online unless you switch on the optional calendar sync.</span></span></div>
     <div class="it"><span class="ic">📋</span><span><b>PHC-minded</b><span>MR numbers, per-visit timestamps, registers and a tamper-evident audit log.</span></span></div>
     <div class="it"><span class="ic">📤</span><span><b>No lock-in</b><span>Export everything to CSV or PDF whenever you want. It's your record.</span></span></div>
   </div>
@@ -388,7 +388,9 @@
           can never search later.</p>
         <ul>
           <li>Three encounter types: <b>Consultation</b>, <b>Treatment</b> and <b>Review</b></li>
-          <li>Findings recorded <b>per tooth</b>, using FDI numbering</li>
+          <li>Findings recorded <b>per tooth</b>, in <b>FDI, Universal or Palmer</b> numbering, whichever your clinic uses</li>
+          <li><b>Root canal grid</b>: working length, reference point, master file and obturation, canal by canal</li>
+          <li>A review knows which visit and which tooth it is following up, and picks that tooth for you</li>
           <li>What was charged and what was paid sit on the same line as the clinical work</li>
         </ul>
       </div>
@@ -400,10 +402,10 @@
       <div class="step-txt">
         <div class="step-num">4</div>
         <h3>A tooth chart that remembers</h3>
-        <p>The full FDI chart for every patient, built up from the visits you have already recorded.
+        <p>The full chart for every patient, adult and primary teeth, built up from the visits you have already recorded.
           Click a tooth to see its whole history rather than scrolling through years of notes.</p>
       </div>
-      <div><div class="shot"><img loading="lazy" src="img/04-toothchart.jpg" width="1500" height="938" alt="FDI tooth chart for a patient"></div></div>
+      <div><div class="shot"><img loading="lazy" src="img/04-toothchart.jpg" width="1500" height="938" alt="Tooth chart for a patient"></div></div>
     </div>
 
     <!-- 5 — full width: the printed documents are the most persuasive thing here -->
@@ -422,7 +424,7 @@
         </div>
         <div>
           <div class="shot shot--doc"><img loading="lazy" src="img/13-handout.jpg" width="1500" height="932" alt="Patient handout showing prescription and post-treatment instructions"></div>
-          <div class="cap"><b>Patient handout</b> — prescription and instructions only. Save it as an image and send it on WhatsApp.</div>
+          <div class="cap"><b>Patient handout</b> — prescription and instructions only, in English or <b>Urdu (Nastaliq)</b>. Save it as an image and send it on WhatsApp.</div>
         </div>
       </div>
     </div>
@@ -488,7 +490,13 @@
         <div class="step-num">10</div>
         <h3>Ready when the inspector walks in</h3>
         <p>The registers a PHC inspection asks for, kept as you go instead of reconstructed the night
-          before — referrals, incidents, sentinel events and adverse drug reactions.</p>
+          before — referrals, incidents, complaints, sentinel events and adverse drug reactions.</p>
+        <ul>
+          <li>A <b>prescription register</b> built from the notes you already write</li>
+          <li><b>OPD register</b> printed straight from the visit log, for any date range</li>
+          <li>Print a patient's <b>whole file</b> in one go, with or without the money</li>
+          <li>Attach <b>evidence photos</b> to a register entry, and print any register for a chosen period</li>
+        </ul>
       </div>
       <div><div class="shot"><img loading="lazy" src="img/09-compliance.jpg" width="1500" height="938" alt="Compliance registers page"></div></div>
     </div>
@@ -515,6 +523,10 @@
         <h3>Appointments and recalls</h3>
         <p>Book the chair, set the status as the day moves, and send reminders straight to WhatsApp.
           Recalls come back to the dashboard on their own when they fall due.</p>
+        <ul>
+          <li><b>Google Calendar sync</b> (optional): appointments appear on your phone, updated as you book</li>
+          <li>When a follow-up patient arrives, the review opens already linked to the right visit</li>
+        </ul>
       </div>
       <div><div class="shot"><img loading="lazy" src="img/11-appointments.jpg" width="1500" height="1128" alt="Appointments page with scheduled visits and status"></div></div>
     </div>
@@ -582,13 +594,15 @@
     <div class="faq">
       <details open>
         <summary>Do I need internet?</summary>
-        <p>No. Prime Dental installs on your Windows PC and runs entirely on that machine. The only
-          time it uses the internet is to check for a software update, and it works perfectly well
-          if it never gets one.</p>
+        <p>No. Prime Dental installs on your Windows PC and runs entirely on that machine. It uses the
+          internet only to check for a software update and, if you choose to switch it on, to copy
+          appointments to your Google Calendar. Without internet, everything else keeps working.</p>
       </details>
       <details>
         <summary>Where is my patient data stored?</summary>
-        <p>On your computer, in your clinic. It is never uploaded anywhere. That also means the backup
+        <p>On your computer, in your clinic. It is never uploaded anywhere. The one exception is
+          optional: if you connect Google Calendar, appointment details (name, time, planned treatment,
+          never fees) go to your own Google account; see the <a href="privacy.html">privacy page</a>. Because the data lives on your PC, the backup
           is your responsibility — the software writes automatic backups to a folder you choose, and
           I'll set that up with you during installation. Keep a copy on a USB or an external drive.</p>
       </details>
