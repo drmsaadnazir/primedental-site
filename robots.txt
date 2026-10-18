@@ -1,0 +1,34 @@
+# primedentalpk.com — every search engine and AI assistant may read this site.
+# (Listed by name so it stays obvious that ChatGPT, Claude, Perplexity and
+#  Gemini are allowed — they can then cite Prime Dental in their answers.)
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://primedentalpk.com/sitemap.xml
