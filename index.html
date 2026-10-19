@@ -47,7 +47,7 @@
     --navy:#0F2744; --ink:#0F2744; --accent:#2E7CF6; --accent2:#00C9A7;
     --light:#E8F1FF; --gray:#64748B; --green:#0A6B3C; --amber:#92600A;
     --bg:#FFFFFF; --bg2:#F4F6FA; --line:#E3E8F0; --wa:#25D366;
-    --maxw:1120px;
+    --maxw:1520px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -167,12 +167,14 @@
 
   /* ---------- walkthrough ---------- */
   .step{
-    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.32fr);
-    gap:52px; align-items:center; margin-bottom:60px;
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);
+    gap:48px; align-items:center; margin-bottom:64px;
   }
   /* .sec-head is child 1, so the steps start at child 2 — flipping the ODD
      children is what puts text-first on step 1 and alternates from there. */
   .step:nth-child(odd) .step-txt{order:2}
+  /* ...and swap the column widths with it, so the screenshot always gets the wide column */
+  .step:nth-child(odd){grid-template-columns:minmax(0,2.2fr) minmax(0,1fr)}
   .step:last-child{margin-bottom:0}
   .step-num{
     display:inline-grid; place-items:center; width:30px;height:30px;border-radius:8px;
@@ -188,13 +190,43 @@
   }
   /* App screens are wide and top-heavy: show the top of the screen at a
      consistent height so the page keeps a rhythm instead of running to 20,000px. */
-  .shot img{max-height:430px; object-fit:cover; object-position:top center}
+  .shot img{max-height:620px; object-fit:cover; object-position:top center}
   .shot--doc img{max-height:none; object-fit:contain}
   .cap{font-size:13px; color:var(--gray); margin-top:11px; text-align:center; font-style:italic}
+
+  /* ---------- click-to-enlarge ---------- */
+  .shot{position:relative}
+  .zoomable{cursor:zoom-in}
+  .zoomable:focus-visible{outline:3px solid var(--accent); outline-offset:-3px}
+  .shot::after{
+    content:"\2922  Click to enlarge"; position:absolute; right:10px; bottom:10px;
+    font-size:12px; font-weight:600; color:#fff; background:rgba(15,39,68,.72);
+    padding:5px 10px; border-radius:100px; pointer-events:none; opacity:.85; transition:opacity .15s;
+  }
+  .shot:hover::after{opacity:1}
+  .lb{
+    position:fixed; inset:0; z-index:100; background:rgba(8,18,34,.9);
+    overflow-y:auto; display:none; padding:56px 2vw 32px; cursor:zoom-out;
+  }
+  .lb.open{display:block}
+  .lb img{
+    margin:0 auto; width:auto; max-width:min(1500px,100%); height:auto;
+    border-radius:8px; box-shadow:0 20px 60px rgba(0,0,0,.5); background:#fff; cursor:default;
+  }
+  .lb-cap{color:#C6D8F2; text-align:center; font-size:14px; margin:14px auto 0; max-width:90ch}
+  .lb-btn{
+    position:fixed; top:10px; width:42px; height:42px; border-radius:50%; border:none;
+    background:rgba(255,255,255,.14); color:#fff; font-size:22px; line-height:1; cursor:pointer;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.26)}
+  .lb-close{right:14px}
+  .lb-prev{right:112px} .lb-next{right:63px}
+  body.lb-lock{overflow:hidden}
   @media(max-width:900px){
     .step{grid-template-columns:1fr; gap:26px; margin-bottom:58px}
     /* single column on phones: always read the text first, then see the screen */
     .step:nth-child(odd) .step-txt{order:0}
+    .step:nth-child(odd){grid-template-columns:1fr}
     .shot img{max-height:330px}
     .shot--doc img{max-height:none}
   }
@@ -761,6 +793,60 @@
         YOUTUBE_FULL_ID + '">Watch the full walkthrough on YouTube &rarr;</a>';
       box.parentNode.insertBefore(p, box.nextSibling);
     }
+  })();
+
+  // Click any screenshot to see it full size (Esc / click outside closes, arrows step through)
+  (function(){
+    var imgs = Array.prototype.slice.call(document.querySelectorAll(".shot img, .frame > img"));
+    if (!imgs.length) return;
+    var lb = document.createElement("div");
+    lb.className = "lb";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Enlarged screenshot");
+    lb.innerHTML = '<button class="lb-btn lb-prev" aria-label="Previous screenshot">&lsaquo;</button>' +
+      '<button class="lb-btn lb-next" aria-label="Next screenshot">&rsaquo;</button>' +
+      '<button class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+      '<img alt=""><p class="lb-cap"></p>';
+    document.body.appendChild(lb);
+    var big = lb.querySelector("img"), cap = lb.querySelector(".lb-cap"), cur = 0, opener = null;
+
+    function show(i){
+      cur = (i + imgs.length) % imgs.length;
+      big.src = imgs[cur].currentSrc || imgs[cur].src;
+      big.alt = cap.textContent = imgs[cur].alt;
+      lb.scrollTop = 0;
+    }
+    function open(i){
+      opener = imgs[i]; show(i);
+      lb.classList.add("open"); document.body.classList.add("lb-lock");
+      lb.querySelector(".lb-close").focus();
+    }
+    function close(){
+      lb.classList.remove("open"); document.body.classList.remove("lb-lock");
+      if (opener) opener.focus();
+    }
+    imgs.forEach(function(img, i){
+      img.classList.add("zoomable");
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("role", "button");
+      img.addEventListener("click", function(){ open(i); });
+      img.addEventListener("keydown", function(e){
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); }
+      });
+    });
+    lb.addEventListener("click", function(e){
+      var t = e.target;
+      if (t.classList.contains("lb-prev")) show(cur - 1);
+      else if (t.classList.contains("lb-next")) show(cur + 1);
+      else if (t !== big) close();
+    });
+    document.addEventListener("keydown", function(e){
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(cur - 1);
+      else if (e.key === "ArrowRight") show(cur + 1);
+    });
   })();
 </script>
 
