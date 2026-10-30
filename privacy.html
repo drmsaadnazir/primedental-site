@@ -48,7 +48,7 @@
 </header>
 
 <h1>Privacy Policy</h1>
-<div class="meta">Last updated: 19 October 2026</div>
+<div class="meta">Last updated: 30 October 2026</div>
 
 <p>Prime Dental is practice-management software for dental clinics, made by Dr. Saad
 Nazir ("we"). This page explains what happens to the information a clinic enters into the app,
@@ -57,7 +57,7 @@ and what the optional Google Calendar and Google Contacts connections do.</p>
 <div class="note">
   <b>The short version:</b> Prime Dental runs on the clinic's own computer. Patient records are
   stored on that computer and are never sent to us. Patient details leave the computer only if the clinic
-  chooses to connect its own Google Calendar or Google Contacts, or uses voice dictation (turned into text by Windows).
+  chooses to connect its own Google Calendar or Google Contacts, or uses voice dictation (turned into text by Windows, or by Groq if the clinic sets that up).
 </div>
 
 <h2>1. Where clinic data is stored</h2>
@@ -73,7 +73,7 @@ backup files.</p>
 <table>
   <tr><td>Update check</td><td>Asks our release page on GitHub whether a newer version exists. No clinic or patient data is sent.</td></tr>
   <tr><td>WhatsApp</td><td>Buttons such as "Remind" open WhatsApp with a message already typed. Nothing is sent until the clinic presses Send in WhatsApp.</td></tr>
-  <tr><td>Voice dictation</td><td>When the clinic uses a microphone (&#x1F3A4;) button, the spoken words are turned into text by Microsoft's speech service built into Windows. They are not sent to or stored by us. Typing works fully offline.</td></tr>
+  <tr><td>Voice dictation</td><td>When the clinic uses a microphone (&#x1F3A4;) button, the spoken words are turned into text by the engine the clinic chooses in <b>Settings → Voice typing</b>: Microsoft's speech service built into Windows (the default), offline Whisper on the clinic's own computer (nothing leaves the computer), or Groq (USA) using the clinic's own free Groq key. With Groq, only the sound of what is dictated into a box, with a short list of dental words to help the spelling, is sent to Groq to be turned into text; no patient records or files are sent, and the key stays on the clinic's computer, not in backups. Dictation is not sent to or stored by us. Typing works fully offline.</td></tr>
   <tr><td>Google Calendar</td><td>Only if the clinic turns it on — see section 3.</td></tr>
   <tr><td>Google Contacts</td><td>Only if the clinic turns it on — see section 3.</td></tr>
 </table>
